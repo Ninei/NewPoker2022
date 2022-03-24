@@ -1,0 +1,23 @@
+apply plugin: 'war'
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-batch'
+
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.3'
+    runtimeOnly 'mysql:mysql-connector-java'
+}
+
+project(':NewPoker:NewPoker_Play') {
+    dependencies {
+        implementation project(':Ninei')
+    }
+}
+
+project(':NewPoker:NewPoker_Web') {
+    dependencies {
+        implementation project(':Ninei')
+    }
+}
+
+version = 'v0.0.2'
